@@ -12,6 +12,10 @@ function new_form () {
                         <input className="form-control" id="name" name="name" required />
                     </div>
                     <div className="form-group">
+                        <label for="founded">Founded Year</label>
+                        <input className="form-control" id="founded" name="founded" />
+                    </div>
+                    <div className="form-group">
                         <label htmlFor="pic">Place Picture</label>
                         <input className="form-control" id="pic" name="pic" />
                     </div>
@@ -21,7 +25,7 @@ function new_form () {
                     </div>
                     <div className="form-group">
                         <label htmlFor="state">State</label>
-                        <input className="form-control" id="state" name="state" />
+                        {/* <input className="form-control" id="state" name="state" /> */}
                         <select className = 'form-control' name ='state' id='state'>
                             <option value="Select">Select State</option>
                             <option value="AL">Alabama</option>
