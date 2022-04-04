@@ -10,11 +10,13 @@ const placeSchema = new mongoose.Schema({
       type: Number,
       min : [1673, 'Surely not that?'],
       max : [new Date().getFullYear(), 'hey this year is in the future']
-  }
+  },
+  comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }]
 })
 
 placeSchema.methods.showEstablished = function(){
     return `${this.name} has been serving ${this.city} since ${this.founded}.`
 }
 
-module.exports = mongoose.model('Place', placeSchema)
+module.exports = mongoose.model('Place', placeSchema) // this is where the object takes its name 
+

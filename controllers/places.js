@@ -38,9 +38,13 @@ router.get('/new', (req, res) => {
   res.render('places/new')
 })
 
+
+
 router.get('/:id', (req, res) => {
   db.Place.findById(req.params.id)
+  .populate('comments')  // populate is a () which is part of Mongoose db
   .then(place => {
+      console.log(place.comments)
       res.render('places/show', { place })
   })
   .catch(err => {
@@ -48,6 +52,9 @@ router.get('/:id', (req, res) => {
       res.render('error404')
   })
 })
+
+
+
 
 router.put('/:id', (req, res) => {
   res.send('PUT /places/:id stub')
