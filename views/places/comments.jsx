@@ -10,18 +10,18 @@ function comments_form (data) {
                 
                     <div className = 'row'>
                         <div className="form-group col-sm-6">
-                            <label htmlFor="author">Author</label>
+                            <label htmlFor="author">Name</label>
                             <input className="form-control" id="author" name="author"  required />
                         </div>
 
                         <div className="form-group col-sm-6">
-                            <label htmlFor="content">Content</label>
+                            <label htmlFor="content">Comment</label>
                             <textarea name="content" id="content" cols="30" rows="5"></textarea>
                         </div>
 
                         <div className="form-group col-sm-6">
                             <label htmlFor="stars">Star Rating</label>
-                            <input type="number" step="0.5" id="stars"/>
+                            <input type="number" step="0.5" id="stars" required/>
                         </div>
 
                         <div className="form-group col-sm-6">
