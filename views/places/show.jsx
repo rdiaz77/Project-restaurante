@@ -45,10 +45,7 @@ function show (data) {
                     Serving {data.place.cuisines}
                 </h4>
             </div>
-            <div>
-                <h2>Comments</h2>
-                {comments}
-            </div>
+            
             <a href={`/places/${data.id}/edit`} className="btn btn-warning"> 
                 Edit
             </a>      
@@ -57,8 +54,13 @@ function show (data) {
                     Delete
                 </button>
             </form> 
-            
-
+            <div>
+                <h2>Comments</h2>
+                {comments}
+            </div>
+            <a href={`/places/${data.id}/comment`} className="btn btn-primary"> 
+                Add Comment
+            </a>      
           </main>
         </Def>
     )
