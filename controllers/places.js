@@ -34,12 +34,11 @@ router.post('/', (req, res) => {
   })
 })
 
-//SHOW ALL THE PLACES
+//RENDER ADD PLACE FORM
 
 router.get('/new', (req, res) => {
   res.render('places/new')
 })
-
 
 // SHOW SPECIFIC PLACE
 
@@ -57,34 +56,42 @@ router.get('/:id', (req, res) => {
   })
 })
 
+
 // SHOW THE ADD COMMENT FORM
 
 router.get('/:id/comment', (req,res)=>{ // this =route does not work
   res.render('places/comments')
 })
+
+
  // POST COMMENT
 
- router.post('/:id/comment', (req,res) => {
-  console.log(req.body)
-  console.log(req.params.id)
-  db.Place.findById(req.params.id)
-  .then(place => {
-      db.Comment.create(req.body)
-      .then(comment => {
-          place.comments.push(comment.id)
-          place.save()
-          .then(() => {
-              res.redirect(`/places/${req.params.id}`)
-          })
-      })
-      .catch(err => {
-          res.render('error404')
-      })
-  })
-  .catch(err => {
-      res.render('error404')
-  })
+router.post('/:id/comment', (req,res)=>{
+    console.log(req.body)
+    console.log(req.params.id)
 })
+
+//  router.post('/:id/comment', (req,res)=>{
+//   console.log(req.body)
+//   console.log(req.params.id)
+//   db.Place.findById(req.params.id)
+//   .then(place => {
+//       db.Comment.create(req.body)
+//       .then(comment => {
+//           place.comments.push(comment.id)
+//           place.save()
+//           .then(() => {
+//               res.redirect(`/places/${req.params.id}`)
+//           })
+//       })
+//       .catch(err => {
+//           res.render('error404')
+//       })
+//   })
+//   .catch(err => {
+//       res.render('error404')
+//   })
+// })
 
 
 
